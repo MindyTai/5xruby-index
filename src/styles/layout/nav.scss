@@ -1,0 +1,175 @@
+.nav-bar {
+  display: block;
+  background-color: $white;
+  box-shadow: 0 0 5px $shadow-color;
+  position: fixed;
+  width: 100%;
+  ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    a {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      color: $grey-50;
+      cursor: pointer;
+      white-space: nowrap;
+      &:hover {
+        text-decoration: none;
+        color: $red;
+      }
+    }
+    li {
+      display: list-item;
+      font-size: 14px;
+      color: $grey-50;
+      &:hover {
+        color: $red;
+      }
+    }
+  }
+  .lang-sign-in {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    display: block;
+    &.active ul {
+      opacity: 0;
+      height: 0;
+    }
+    ul {
+      height: 36px;
+      transition: height .5s, opacity .5s;
+    }
+  }
+  .menu {
+    img {
+      max-width: 100%;
+      display: inline-block;
+      align-items: center;
+      // padding: 15px;
+      cursor: pointer;
+    }
+  }
+  .nav-collapse {
+    cursor: pointer;
+    overflow: hidden;
+    transition: height .5s;
+    a {
+      text-decoration: none;
+      &:hover {
+        color: $red;
+      }
+    }
+    &.active {
+      height: 0px;
+      display: block;
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .nav-bar {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    .lang-sign-in {
+      display: none;
+    }
+    .list {
+      display: none;
+    }
+    .sm-hamberger-bar {
+      width: 80px;
+      height: 80px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      background-color: $red;
+      &:before {
+        content: " ";
+        display: block;
+        position: absolute;
+        height: 2px;
+        width: 50%;
+        left: 0;
+        right: 0;
+        top: 20px;
+        bottom: 0;
+        margin: auto;
+        background-color: $white;
+        box-shadow: 0px -10px 0px $white;
+      }
+      &:after {
+        content: " ";
+        display: block;
+        position: absolute;
+        height: 2px;
+        width: 50%;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 20px;
+        margin: auto;
+        background-color: $white;
+      }
+    }
+    .menu {
+      img {
+        max-width: 100%;
+        padding-left: 0px;
+      }
+    }
+    .nav-collapse {
+      height: 355px;
+      width: 100%;
+      background-color: $white;
+      position: fixed;
+      top: 80px;
+      left: 0px;
+      right: 0px;
+      box-shadow: 0 1px 5px $shadow-color;
+    }
+    .sign-in {
+      text-align: center;
+      ul {
+        justify-content: center;
+        flex-direction: column;
+        &:nth-child(n+3) {
+          display: block;
+        }
+      }
+      li {
+        display: block;
+        color: $grey-50;
+        font-size: 16px;
+      }
+      a {
+        margin: 14px;
+        color: $grey-50;
+        font-size: 14px;
+      }
+      ul.language-list {
+        background-color: $white-25;
+        padding: 15px 0px;
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
+        li {
+          margin-top: 0px;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .nav-collapse {
+    display: none;
+  }
+  li {
+    padding: 15px 7px;
+  }
+}

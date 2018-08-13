@@ -1,0 +1,11 @@
+//common
+@import "./common/variables.scss";
+
+// library
+@import "bootstrap/scss/bootstrap.scss";
+
+// layout
+@import "./layout/nav.scss";
+
+// page
+@import "./page/index.scss";
