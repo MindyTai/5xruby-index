@@ -75,6 +75,7 @@
     height: 80px;
     display: flex;
     align-items: center;
+    z-index: 2;
     .lang-sign-in {
       display: none;
     }
@@ -85,8 +86,8 @@
       width: 80px;
       height: 80px;
       position: absolute;
-      right: 0;
-      top: 0;
+      right: 0px;
+      top: 0px;
       background-color: $red;
       &:before {
         content: " ";
@@ -131,6 +132,7 @@
       left: 0px;
       right: 0px;
       box-shadow: 0 1px 5px $shadow-color;
+      display: none;
     }
     .sign-in {
       text-align: center;
