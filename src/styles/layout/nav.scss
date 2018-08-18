@@ -30,7 +30,7 @@
       }
     }
   }
-  .lang-sign-in {
+  #lang-sign-in {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -78,7 +78,7 @@
     display: flex;
     align-items: center;
     z-index: 2;
-    .lang-sign-in {
+    #lang-sign-in {
       display: none;
     }
     .list {
