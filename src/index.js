@@ -9,8 +9,8 @@ registerServiceWorker();
 $(function(){
   let top = 0;
   //nav 
-  var $window = $(window);
-  var $langSignIn = $("#lang-sign-in");
+  let $window = $(window);
+  let $langSignIn = $("#lang-sign-in");
 
 
   $window.scroll(function(){
@@ -69,8 +69,9 @@ $(function(){
   })
 
   //scroll-top button
-  $('#scrTop').on('click', function () {
-    $('#scrTop').click(function () {
+  let $scrollTop = $('#scrollTop');
+  $scrollTop.on('click', function () {
+    $($scrollTop).click(function () {
         $("html, body , document , window").animate({
           scrollTop: 0
         }, 'slow');
@@ -80,9 +81,9 @@ $(function(){
 
   $window.scroll(function () {
     if ($(this).scrollTop() > 20) {
-      $('#scrTop').fadeIn();
+      $('#scrollTop').fadeIn();
     } else {
-      $('#scrTop').fadeOut();
+      $('#scrollTop').fadeOut();
     }
   });
  
