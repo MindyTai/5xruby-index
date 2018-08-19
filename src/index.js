@@ -9,9 +9,8 @@ registerServiceWorker();
 $(function(){
   let top = 0;
   //nav 
-  let $window = $(window);
-  let $langSignIn = $("#lang-sign-in");
-
+  const $window = $(window);
+  const $langSignIn = $("#lang-sign-in");
 
   $window.scroll(function(){
     top = $(window).scrollTop();
