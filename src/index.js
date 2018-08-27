@@ -70,8 +70,8 @@ $(function(){
 
   //scroll-top button
   let $scrollTop = $('#scrollTop');
-  $scrollTop.on('click', function () {
-    $($scrollTop).click(function () {
+  $scrollTop.click( function () {
+    $scrollTop.click(function () {
         $("html, body , document , window").animate({
           scrollTop: 0
         }, 'slow');
@@ -81,9 +81,9 @@ $(function(){
 
   $window.scroll(function () {
     if ($(this).scrollTop() > 20) {
-      $('#scrollTop').fadeIn();
+      $scrollTop.fadeIn();
     } else {
-      $('#scrollTop').fadeOut();
+      $scrollTop.fadeOut();
     }
   });
  
