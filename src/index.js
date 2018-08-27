@@ -8,14 +8,17 @@ registerServiceWorker();
 
 $(function(){
   let top = 0;
-  
   //nav 
-  $(window).scroll(function(){
+  let $window = $(window);
+  let $langSignIn = $("#lang-sign-in");
+
+
+  $window.scroll(function(){
     top = $(window).scrollTop();
     if(top >= 40) {
-      $(".lang-sign-in").addClass("active");
+       $langSignIn.addClass("active");
     }else{
-      $(".lang-sign-in").removeClass("active");
+      $langSignIn.removeClass("active");
     }
   });
 
@@ -66,8 +69,9 @@ $(function(){
   })
 
   //scroll-top button
-  $('#scrTop').on('click', function () {
-    $('#scrTop').click(function () {
+  let $scrollTop = $('#scrollTop');
+  $scrollTop.click( function () {
+    $scrollTop.click(function () {
         $("html, body , document , window").animate({
           scrollTop: 0
         }, 'slow');
@@ -75,11 +79,11 @@ $(function(){
     });
   });
 
-  $(window).scroll(function () {
+  $window.scroll(function () {
     if ($(this).scrollTop() > 20) {
-      $('#scrTop').fadeIn();
+      $scrollTop.fadeIn();
     } else {
-      $('#scrTop').fadeOut();
+      $scrollTop.fadeOut();
     }
   });
  
