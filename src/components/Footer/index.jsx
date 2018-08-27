@@ -1,8 +1,7 @@
 import React from 'react'
 import pressUrl from '../../img/press-img.png'
 
-const Footer = () => {
-  return (
+const Footer = () => (
       <footer className="p-4">
         <div className="container-fluid">
           <div className="row">
@@ -57,7 +56,6 @@ const Footer = () => {
         </div>
       </div> 
     </footer>
-  )
-}
+)
  
 export default Footer

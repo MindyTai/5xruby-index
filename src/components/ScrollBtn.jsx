@@ -21,11 +21,7 @@ class ScrollBtn extends React.Component {
 
   fadeInOutAnimate(){
     const scrollTop = $(window).scrollTop()
-    if (scrollTop > 20) {
-      this.setState({display: true})
-    } else {
-      this.setState({display: false})
-    }
+    this.setState({ display: (scrollTop > 20) })
   }
 
   isFadeInOutAnimate(){

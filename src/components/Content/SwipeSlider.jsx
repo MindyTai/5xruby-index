@@ -51,7 +51,7 @@ class SwipeSlider extends React.Component {
             sliderDatas.map((data, i) => (
               <li
                 key={data.src}
-                className={`${this.isActiveClass(i)}`}
+                className={this.isActiveClass(i)}
                 onClick={
                   () => {
                     this.setState({ currentIndex: i })
