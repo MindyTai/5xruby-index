@@ -49,26 +49,18 @@
       max-width: 100%;
       display: inline-block;
       align-items: center;
-      // padding: 15px;
       cursor: pointer;
     }
   }
   .nav-collapse {
-    cursor: pointer;
     overflow: hidden;
-    
     height: 0px;
     a {
       text-decoration: none;
       &:hover {
         color: $red;
-        height: 350px;
       }
     }
-    // &.active {
-    //   height: 0px;
-    //   display: block;
-    // }
   }
 }
 
@@ -136,12 +128,14 @@
       box-shadow: 0 1px 5px $shadow-color;
       display: none;
       height: 0px;
-      cursor: pointer;
       overflow: hidden;
       transition: height .5s ease;
       display: block;
       &.active { 
         height: 350px;
+      }
+      li {
+        cursor: pointer;
       }
     }
     .sign-in {
@@ -157,12 +151,14 @@
         display: block;
         color: $grey-50;
         font-size: 16px;
+        cursor: pointer;
+        a {
+          margin: 14px;
+          color: $grey-50;
+          font-size: 14px;
+        }
       }
-      a {
-        margin: 14px;
-        color: $grey-50;
-        font-size: 14px;
-      }
+     
       ul.language-list {
         background-color: $white-25;
         padding: 15px 0px;
