@@ -1,6 +1,6 @@
 import React from 'react'
-import fbicon from '../../img/fb-icon.png'
-import twittericon from '../../img/twitter-icon.png'
+import fbicon from '../../../img/fb-icon.png'
+import twittericon from '../../../img/twitter-icon.png'
 
 const KnowUs = ()=> {
   return(

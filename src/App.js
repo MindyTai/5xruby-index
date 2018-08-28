@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-
 import Header from './components/Header'
 import Footer from './components/Footer'
-import Content from './components/Content'
+// import Content from './components/Content/Index_page'
 import ScrollBtn from './components/ScrollBtn'
 
 class App extends Component {
@@ -11,7 +10,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Content />
+        {/* <Content /> */}
         <Footer />
         <ScrollBtn />
       </div>
