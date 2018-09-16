@@ -51,6 +51,11 @@
       align-items: center;
       cursor: pointer;
     }
+    .list {
+      a.active {
+        color: $red;
+      }
+    }
   }
   .nav-collapse {
     overflow: hidden;
@@ -167,6 +172,11 @@
         flex-direction: row;
         li {
           margin-top: 0px;
+        }
+      }
+      ul.navList {
+        li a.active{
+          color : $red;
         }
       }
     }
