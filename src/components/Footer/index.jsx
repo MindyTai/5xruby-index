@@ -1,5 +1,6 @@
 import React from 'react'
 import pressUrl from '../../img/press-img.png'
+import  {NavLink} from 'react-router-dom'
 
 const Footer = () => (
       <footer className="p-4">
@@ -14,15 +15,33 @@ const Footer = () => (
             <div className="col-sm-9 col-md-8 col-lg-8">
               <div className="footer-list">
                 <ul>
-                  <li className="p-0"><a>關於五倍紅寶石</a></li>
-                  <li><a>媒體報導</a></li>
-                  <li><a>團隊成員</a></li>
-                  <li><a>聯絡詢價</a></li>
-                  <li><a>常見問題</a></li>
-                  <li><a>工作機會</a></li>
-                  <li><a>網站原始碼</a></li>
-                  <li><a>隱私權條款</a></li>
-                  <li><a>服務條款</a></li>
+                  <li className="p-0">
+                    <NavLink to ="/about">關於五倍紅寶石</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to ="/press">媒體報導</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to ="/members">團隊成員</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to ="/contact">聯絡詢價</NavLink>
+                  </li>
+                  <li >
+                    <NavLink to ="/qna">常見問題</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to ="/posts">工作機會</NavLink>
+                  </li>
+                  <li>
+                    <a href="https://github.com/5xRuby">網站原始碼</a>
+                  </li>
+                  <li>
+                    <NavLink to ="/privacy">隱私權條款</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to ="/service">服務條款</NavLink>
+                  </li>
                 </ul>
               </div>
             <div className="footer-info">

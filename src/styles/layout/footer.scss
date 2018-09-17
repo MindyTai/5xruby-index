@@ -18,9 +18,16 @@ footer {
       display: inline;
       list-style-type: none;
       font-weight: bold;
-      cursor: pointer;
-      &:hover {
-        color: $red;
+      a {
+        text-decoration: none;
+        color: $grey-100;
+        cursor: pointer;
+        &:hover {
+          color: $red;
+        }
+        &.active{
+          color: $red;
+        }
       }
     }
   }
@@ -109,22 +116,4 @@ footer {
       }
     }
   }
-  // .scrollup {
-  //   position: fixed;
-  //   height: 3.125rem;
-  //   width: 3.125rem;
-  //   background-color: $red;
-  //   color: $white-25;
-  //   border-radius: 50%;
-  //   bottom: 3.125rem;
-  //   right: 1.25rem;
-  //   font-weight: bold;
-  //   line-height: 3.125rem;
-  //   font-size: 1.875rem;
-  //   cursor: pointer;
-  //   transition-duration: 0s;
-  //   &:hover {
-  //     transform: scale(1.1);
-  //   }
-  // }
 }

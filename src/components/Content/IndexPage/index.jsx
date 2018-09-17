@@ -5,21 +5,21 @@ import Lectures from './Lectures'
 import Showcases from './Showcases'
 import KnowUs from './KnowUs'
 import AvatarSlider from './AvatarSlider'
-import sliderDatas from '../../info/slider.json'
-import avatarDatas from '../../info/avatar.json'
-import aboutDatas from '../../info/about.json'
-import lectureDatas from '../../info/lecture.json'
-import showcaseDatas from '../../info/showcase.json'
+import sliderData from '../../info/slider.json'
+import avatarData from '../../info/avatar.json'
+import aboutData from '../../info/about.json'
+import lectureData from '../../info/lecture.json'
+import showcaseData from '../../info/showcase.json'
 
 class Content extends React.Component {
   render(){
     return (
       <article>
-        <SwipeSlider sliderDatas={sliderDatas} />
-        <About aboutDatas={aboutDatas}/>
-        <Lectures lectureDatas={lectureDatas}/>
-        <AvatarSlider avatarDatas={avatarDatas} />
-        <Showcases showcaseDatas={showcaseDatas}/>
+        <SwipeSlider sliderDatas={sliderData} />
+        <About aboutDatas={aboutData}/>
+        <Lectures lectureDatas={lectureData}/>
+        <AvatarSlider avatarDatas={avatarData} />
+        <Showcases showcaseDatas={showcaseData}/>
         <KnowUs />
       </article> 
     )
