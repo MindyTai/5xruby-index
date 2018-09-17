@@ -12,13 +12,13 @@ const KnowUs = ()=> {
             <p className="text text-center mb-4 mt-4">你可以看看 <a className="text-red" href="/faq">常見問題</a> 或者直接 <a className="text-red" href="/contacts">線上洽詢</a> ，會有親切的客服回答你的問題，<br /> 也可以透過社群網站隨時關注我們的動態。</p>
           </div>
           <div className="social-btn bottom-spacing-lg mx-auto mb-5">
-            <a target="_blank"  href="https://www.facebook.com/5xruby">
+            <a target="_blank"  rel="noopener noreferrer" href="https://www.facebook.com/5xruby">
             <img 
             src={fbicon} 
             className="mr-3" 
             alt="Icon fb" />
             </a>
-            <a target="_blank"  href="https://twitter.com/5xruby">
+            <a target="_blank"  rel="noopener noreferrer" href="https://twitter.com/5xruby">
             <img 
             src={twittericon} 
             alt="Icon twitter" />

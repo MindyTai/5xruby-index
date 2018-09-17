@@ -64,7 +64,7 @@ class Content extends React.Component {
              </div>
            </div>  
            <div className="col-sm-12 col-md-12 col-lg-12 pl-0 map mt-4 mb-3">
-             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14459.016266311726!2d121.513862!3d25.0424189!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa8402e622aa7b148!2z5LqU5YCN57SF5a-255-z!5e0!3m2!1szh-TW!2stw!4v1482991564796"></iframe>
+             <iframe title="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14459.016266311726!2d121.513862!3d25.0424189!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa8402e622aa7b148!2z5LqU5YCN57SF5a-255-z!5e0!3m2!1szh-TW!2stw!4v1482991564796"></iframe>
            </div>
          </div>
          <div className="col-sm-12 col-md-6 col-lg-6 pl-0 pt-5">
