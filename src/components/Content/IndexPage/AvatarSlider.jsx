@@ -1,52 +1,57 @@
-import React from 'react';
-import PropTypes from 'prop-types'
+import React from "react";
+import PropTypes from "prop-types";
 
 class AvatarSlider extends React.Component {
   constructor(props){
-    super(props)
+    super(props);
     this.state = {
       currentIndex : 0,
-    }
-    this.autoPlayInterval = null
+    };
+    this.autoPlayInterval = null;
   }
 
   componentDidMount() {
     this.autoPlayInterval = setInterval(
       () => (this.changeToNextSlider())
-    ,5000)
+    ,5000);
   } 
 
   isActiveClass(i) {
-    return (this.state.currentIndex) === i ? "active" : ""
+    const { currentIndex } = this.state;
+    return currentIndex  === i ? "active" : "";
   }
 
   changeToNextSlider(){
-    const total = this.props.avatarDatas.length
-    let nextIndex = this.state.currentIndex + 1
-    if((nextIndex+1) > total) {nextIndex = 0}
-    
+    const { avatarDatas } = this.props;
+    const { currentIndex } = this.state;
+    const total =avatarDatas.length;
+    let nextIndex = currentIndex + 1;
+    if((nextIndex+1) > total) {nextIndex = 0;}
     this.setState({
       currentIndex: nextIndex,
-    })
+    });
   }
 
   render() {
-    const { avatarDatas } = this.props
+    const { avatarDatas } = this.props;
     
     return(
       <section className="avatar">
         {
           avatarDatas.map((data, i) => (
-            <div key={data.src} className={ `avatar-slide p-3 mt-5 mb-5 ${this.isActiveClass(i)}`}>
+            <div key={data.src} className={`avatar-slide p-3 mt-5 mb-5 ${this.isActiveClass(i)}`}>
               <div className="container">
                 <div className="row">
                   <div className="col-sm-3 col-md-2 col-lg-2">
                     <img  
-                    src={data.src} 
-                    alt= {data.alt} />
+                      src={data.src} 
+                      alt={data.alt}
+                    />
                   </div>
                   <div className="col-sm-9 col-md-10 col-lg-10">
-                    <p> {data.statement} </p>
+                    <p> 
+                      {data.statement}
+                    </p>
                     <span className="name">{ data.name }</span>
                     <br />
                     <span className="title">{ data.title }</span>
@@ -58,24 +63,27 @@ class AvatarSlider extends React.Component {
         } 
         <div className="col-sm-12 col-md-12 col-lg-12 pt-5">
           <ul className="d-flex justify-content-center avatar-list">
-          {
+            {
             avatarDatas.map((data, i) => (
-              <li 
-              key={data.src}
-              className={`${this.isActiveClass(i)}`}
-              onClick={
-                () => {
-                  this.setState({currentIndex: i})
-                  clearInterval(this.autoPlayInterval)
+              <div
+                key={data.src}
+                className={`${this.isActiveClass(i)}`}
+                onClick={
+                  () => {
+                    this.setState({currentIndex: i});
+                    clearInterval(this.autoPlayInterval);
                   }
                 }
+                onKeyPress={this.handleKeyPress} 
+                role="button"
+                tabIndex="0"
               />
             ))
           }
-            </ul>
-          </div>
-        </section>
-      )
+          </ul>
+        </div>
+      </section>
+      );
     }
   }
 
@@ -86,10 +94,10 @@ AvatarSlider.propTypes = {
     name: PropTypes.string,
     title: PropTypes.string
   }))
-}
+};
 
 AvatarSlider.defaultProps = {
   avatarDatas: []
-}
+};
 
-export default AvatarSlider
+export default AvatarSlider;

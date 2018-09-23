@@ -51,10 +51,11 @@ article {
   .swiper-list {
     position: absolute;
     bottom: 30px;
-    width: 100%;
+    left: 0;
+    right: 0;
     margin: auto;
     text-align: center;
-    li {
+    div {
       height: 10px;
       width: 10px;
       border-radius: 50%;
@@ -66,7 +67,12 @@ article {
       &.active {
         background-color: $red;
       }
+      &:focus {
+        outline: transparent;
+      }
     }
+  
+    
     @include media-breakpoint-only(lg){
       bottom: 20px;
     }
@@ -100,6 +106,8 @@ article {
   }
   a {
     cursor: pointer;
+    color: $grey-100;
+    text-decoration: none;
   }
   .title {
     font-size: 24px;
@@ -189,10 +197,11 @@ article {
     }
   }
   .more {
-    color: $red;
     width: 100px;
     a {
+      text-decoration: none;
       cursor: pointer;
+      color: $red;
     }
   }
   @include media-breakpoint-down(sm) {
@@ -202,6 +211,9 @@ article {
   }
   @include media-breakpoint-only(md) {
     top: 800px;
+    .lecturesBox:last-child {
+      display: none;
+    }
   }
 }
 
@@ -240,7 +252,7 @@ article {
     left: 0;
     right: 0;
     margin: auto;
-    li {
+    div {
       height: 10px;
       width: 10px;
       border-radius: 50%;
@@ -251,6 +263,9 @@ article {
       cursor: pointer;
       &.active {
         background-color: $red;
+      }
+      &:focus {
+        outline: transparent;
       }
     }
   }
@@ -326,19 +341,23 @@ article {
     }
   }
   .more {
-    color: $red;
     width: 100px;
     a {
       cursor: pointer;
+      color: $red;
+      text-decoration: none;
     }
   }
   @include media-breakpoint-down(sm) {
-    .lectures-content {
+    .showcases-content {
       flex-wrap: wrap;
     }
   }
   @include media-breakpoint-only(md) {
     top: 800px;
+    .showcasesBox:last-child{
+      display: none;
+    }
   }
 }
 

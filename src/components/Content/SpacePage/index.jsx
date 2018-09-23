@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const Spacing = () => {
   return (
@@ -7,7 +7,7 @@ const Spacing = () => {
         This is the Spacing page.
       </h1>
     </div>
-  )
-}
+  );
+};
 
-export default Spacing
+export default Spacing;

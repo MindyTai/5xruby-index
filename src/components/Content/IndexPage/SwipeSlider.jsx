@@ -1,43 +1,47 @@
-import React from 'react';
-import PropTypes from 'prop-types'
+import React from "react";
+import PropTypes from "prop-types";
 
 class SwipeSlider extends React.Component {
   constructor(props){
-    super(props)
+    super(props);
     this.state = {
       currentIndex: 0,
-    }
-    this.autoPlayInterval = null
+    };
+    this.autoPlayInterval = null;
   }
 
   componentDidMount(){
-    this.autoPlayInterval = setInterval(() => ( this.changeToNextSlider()), 5000)
+    this.autoPlayInterval = setInterval(() => ( this.changeToNextSlider()), 5000);
   }
   
   isActiveClass(i) {
-    return (this.state.currentIndex) === i ? "active" : ""
+    const {currentIndex} = this.state;
+    return currentIndex === i ? "active" : "";
   }
 
   changeToNextSlider() {
-    const total = this.props.sliderDatas.length
-    let nextIndex = this.state.currentIndex + 1
+    const {sliderDatas} = this.props;
+    const {currentIndex} = this.state;
 
-    if((nextIndex+1) > total) {nextIndex = 0}
+    const total = sliderDatas.length;
+    let nextIndex = currentIndex + 1;
+
+    if((nextIndex+1) > total) {nextIndex = 0;}
 
     this.setState({
       currentIndex: nextIndex,
-    })
+    });
   }
 
   render() {
-    const { sliderDatas } = this.props
+    const { sliderDatas } = this.props;
 
     return(
       <section className="swiper-slider">
         {
           sliderDatas.map((data, i) => (
             <div key={data.src} className={`swiper-item ${this.isActiveClass(i)}`}>
-              <a href={data.href} target="_blank">
+              <a href={data.href} target="_blank" rel="noopener noreferrer">
                 <img
                   alt={data.alt}
                   src={data.src}
@@ -49,21 +53,24 @@ class SwipeSlider extends React.Component {
         <ul className="swiper-list">
           {
             sliderDatas.map((data, i) => (
-              <li
+              <div
                 key={data.src}
                 className={this.isActiveClass(i)}
                 onClick={
-                  () => {
-                    this.setState({ currentIndex: i })
-                    clearInterval(this.autoPlayInterval)
-                  }
+                () => {
+                  this.setState({ currentIndex: i });
+                  clearInterval(this.autoPlayInterval);
                 }
+              }
+                onKeyPress={this.handleKeyPress}
+                role="button"
+                tabIndex="0"
               />
             ))
           }
         </ul>
       </section>
-    )
+    );
   }
 }
 
@@ -73,10 +80,10 @@ SwipeSlider.propTypes = {
     alt: PropTypes.string,
     href: PropTypes.string,
   }))
-}
+};
 
 SwipeSlider.defaultProps = {
   sliderDatas: [],
-}
+};
 
-export default SwipeSlider
+export default SwipeSlider;

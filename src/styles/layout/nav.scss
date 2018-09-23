@@ -89,6 +89,9 @@
       top: 0px;
       background-color: $red;
       cursor: pointer;
+      &:focus {
+        outline: none;
+      }
       &:before {
         content: " ";
         display: block;

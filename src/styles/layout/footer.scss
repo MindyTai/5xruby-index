@@ -54,6 +54,7 @@ footer {
       a {
         text-decoration: none;
         cursor: pointer;
+        color: $grey-100;
         &:hover {
           color: $red;
         }

@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types'
+import React from "react";
+import PropTypes from "prop-types";
 
 const About = (props) => {
-  const { aboutDatas } = props
+  const { aboutDatas } = props;
 
   return (
     <section className="about">
@@ -10,13 +10,15 @@ const About = (props) => {
       <div className="icons mt-5 mb-4">
         <div className="container">
           <div className="row">
-          {
-            aboutDatas.map((data,i) => (
+            {
+            aboutDatas.map((data) => (
               <div key={data.src} className="col-sm-12 col-md-3 col-lg-3 p-4">
-                <a>
-                <img 
-                  src= {data.src}
-                  className="mb-2" alt="" />
+                <a href={data.link}>
+                  <img 
+                    src={data.src}
+                    className="mb-2"
+                    alt=""
+                  />
                   <p className="title mb-0">{data.title}</p>
                   <p className="statement">{data.statement}</p>
                 </a>
@@ -27,8 +29,8 @@ const About = (props) => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 About.propTypes = {
   aboutDatas: PropTypes.arrayOf(PropTypes.shape({
@@ -36,10 +38,10 @@ About.propTypes = {
     title: PropTypes.string,
     statement: PropTypes.string
   }))
-}
+};
 
 About.defaultProps = {
   aboutDatas:[] 
-}
+};
 
-export default About
+export default About;
