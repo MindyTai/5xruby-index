@@ -57,6 +57,7 @@
     "start-js": "node scripts/start.js",
     "start": "npm-run-all -p start-js",
     "build-js": "node scripts/build.js",
+    "build-css": "node-sass src/index.scss",
     "build": "npm-run-all build-css build-js"
   },
   "jest": {
